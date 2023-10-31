@@ -29,9 +29,12 @@ const statuses = ["new", "in progress", "resolved"];
             email: `${firstName.toLowerCase()}@${lastName.toLowerCase()}.com`,
             description: faker_1.faker.lorem.paragraph(),
         }));
-        console.log(newTicket);
-        newTicket = yield axios_1.default.put("http://localhost:3000/api/tickets/" + newTicket.id, {
-            status: statuses[getRandomInt(0, 2)],
-        });
+        // console.log(newTicket);
+        // newTicket = await axios.put(
+        //   "http://localhost:3000/api/tickets/" + newTicket.id,
+        //   {
+        //     status: statuses[getRandomInt(0, 2)],
+        //   }
+        // );
     }
 }))();

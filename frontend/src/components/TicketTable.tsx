@@ -81,7 +81,6 @@ const AdminPanel: React.FC<Props> = ({
               <TableCell>Status</TableCell>
               <TableCell>Name</TableCell>
               <TableCell>Email</TableCell>
-              {/* <TableCell>Description</TableCell> */}
               <TableCell>Responses</TableCell>
             </TableRow>
           </TableHead>
@@ -103,7 +102,6 @@ const AdminPanel: React.FC<Props> = ({
                   </TableCell>
                   <TableCell>{ticket.name.slice(0, 30)}</TableCell>
                   <TableCell>{ticket.email.slice(0, 30)}</TableCell>
-                  {/* <TableCell>{ticket.description.slice(0, 40)}</TableCell> */}
                   <TableCell>{ticket.responses.length}</TableCell>
                 </TableRow>
               ))}

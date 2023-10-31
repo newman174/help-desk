@@ -39,7 +39,6 @@ ticketsRouter.post("/", (req, res) => __awaiter(void 0, void 0, void 0, function
         response: [],
     });
     const savedTicket = yield ticket.save();
-    console.table(savedTicket.toJSON());
     res.status(201).json(savedTicket.toJSON());
 }));
 ticketsRouter.put("/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {

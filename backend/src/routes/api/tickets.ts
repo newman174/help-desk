@@ -31,7 +31,6 @@ ticketsRouter.post("/", async (req: Request, res: Response) => {
   });
 
   const savedTicket = await ticket.save();
-  console.table(savedTicket.toJSON());
   res.status(201).json(savedTicket.toJSON());
 });
 

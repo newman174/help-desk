@@ -1,6 +1,6 @@
 // TicketDetails.tsx
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Ticket, StatusOption, AlertInterface } from "../types/types";
 import {
   Alert,
@@ -40,6 +40,12 @@ const TicketDetails: React.FC<TicketDisplayProps> = ({
   const [status, setStatus] = useState<StatusOption>(ticket.status);
   const [newStatus, setNewStatus] = useState<StatusOption>(status);
   const [alert, setAlert] = useState<AlertInterface | "">("");
+
+  useEffect(() => {
+    console.log("status changed");
+    setNewStatus(ticket.status);
+    status !== ticket.status && setStatus(ticket.status);
+  }, [ticket.status, status]);
 
   const handleStatusChange = (e: SelectChangeEvent) => {
     const { value } = e.target;

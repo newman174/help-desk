@@ -20,12 +20,12 @@ const statuses = ["new", "in progress", "resolved"];
       description: faker.lorem.paragraph(),
     })) as TicketInterface;
 
-    console.log(newTicket);
-    newTicket = await axios.put(
-      "http://localhost:3000/api/tickets/" + newTicket.id,
-      {
-        status: statuses[getRandomInt(0, 2)],
-      }
-    );
+    // console.log(newTicket);
+    // newTicket = await axios.put(
+    //   "http://localhost:3000/api/tickets/" + newTicket.id,
+    //   {
+    //     status: statuses[getRandomInt(0, 2)],
+    //   }
+    // );
   }
 })();
