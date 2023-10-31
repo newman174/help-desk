@@ -19,6 +19,7 @@ if (!MONGODB_URI) {
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use((0, morgan_1.default)("dev"));
+app.use(express_1.default.static("../frontend/dist"));
 mongoose_1.default.set("strictQuery", false);
 console.log("connecting to MongoDB");
 mongoose_1.default
