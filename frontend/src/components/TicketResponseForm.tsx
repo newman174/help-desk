@@ -15,9 +15,7 @@ const TicketResponseForm: React.FC<TicketResponseFormProps> = ({
   ticket,
   handleTicketUpdate,
 }) => {
-  const [body, setBody] = useState(
-    "Hello,\n\nWe will get back to you soon.\n\nThank you"
-  );
+  const [body, setBody] = useState("");
   const [alert, setAlert] = useState<AlertInterface | "">("");
   const { id } = ticket;
 

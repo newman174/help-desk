@@ -9,9 +9,9 @@ interface NewTicketFormProps {
 }
 
 const NewTicketForm: React.FC<NewTicketFormProps> = () => {
-  const [name, setName] = useState("Hamachi Catperson");
-  const [email, setEmail] = useState("ham@catface.org");
-  const [description, setDescription] = useState("It doesn't work!");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [description, setDescription] = useState("");
   const [alert, setAlert] = useState<AlertInterface | "">("");
 
   const validEmail = (): boolean => {
