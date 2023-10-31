@@ -1,0 +1,44 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  /* justify-items: start; */
+}
+
+.card {
+  padding: 2em;
+}
+
+th.MuiTableCell-head, dt {
+  font-weight: bold;
+}
+
+dt {
+  text-align: center;
+}
+
+dd {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.ticket-table td {
+  /* white-space-trim: none; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ticket-table tr:hover {
+  cursor: pointer;
+  background-color: rgba(173, 216, 230, 0.298);
+}
+
+.ticket-display {
+  max-width: 50rem;
+  margin: auto;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+}

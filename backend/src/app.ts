@@ -1,7 +1,8 @@
-import express, { Express, Request, Response, Application } from "express";
+import express, { Application } from "express";
 import dotenv from "dotenv";
 import indexRouter from "./routes/index";
 import mongoose from "mongoose";
+import morgan from "morgan";
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ if (!MONGODB_URI) {
 }
 const app: Application = express();
 app.use(express.json());
+app.use(morgan("dev"));
 
 mongoose.set("strictQuery", false);
 
@@ -32,6 +34,8 @@ mongoose
 
 app.use(indexRouter);
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
+export default server;

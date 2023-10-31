@@ -1,7 +1,9 @@
-// ticket.ts
+// Ticket.ts
 
 import mongoose, { Types } from "mongoose";
 import { TicketResponseInterface, ticketResponseSchema } from "./Response";
+
+export type StatusOption = "new" | "in progress" | "resolved";
 
 export interface TicketInterface {
   id: Types.ObjectId;
@@ -11,7 +13,7 @@ export interface TicketInterface {
   description: string;
   createdAt: Date;
   updatedAt: Date;
-  status: "new" | "in progress" | "resolved";
+  status: StatusOption;
 }
 
 const ticketSchema = new mongoose.Schema<TicketInterface>(
@@ -48,7 +50,7 @@ const ticketSchema = new mongoose.Schema<TicketInterface>(
 );
 
 ticketSchema.set("toJSON", {
-  transform: (document, returnedObject) => {
+  transform: (_document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString();
     returnedObject.createdAt = returnedObject.createdAt.toJSON();
     returnedObject.updatedAt = returnedObject.updatedAt.toJSON();
@@ -57,5 +59,4 @@ ticketSchema.set("toJSON", {
   },
 });
 
-// export default mongoose.model("Ticket", ticketSchema);
 export default mongoose.model("Ticket", ticketSchema);

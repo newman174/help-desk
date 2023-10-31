@@ -1,9 +1,9 @@
-// response.ts
+// Response.ts
 
 import { Schema, model, Types } from "mongoose";
 
 export interface TicketResponseInterface {
-  _id: Types.ObjectId;
+  id: Types.ObjectId;
   createdAt: Date;
   message: string;
 }
@@ -22,7 +22,7 @@ export const ticketResponseSchema = new Schema<TicketResponseInterface>(
 );
 
 ticketResponseSchema.set("toJSON", {
-  transform: (document, returnedObject) => {
+  transform: (_document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString();
     returnedObject.createdAt = returnedObject.createdAt.toJSON();
     returnedObject.updatedAt = returnedObject.updatedAt.toJSON();
